@@ -7,6 +7,10 @@ const BoardUser = () => {
   const [content, setContent] = React.useState([]);
 
   React.useEffect(() => {
+    if (!JSON.parse(localStorage.getItem("user"))) {
+      setErrorMessage("No tienes permiso para ver esta página");
+      return;
+    }
     UserService.getUserBoard().then(
       (response) => {
         setContent(response.data);

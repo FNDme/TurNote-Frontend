@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -10,7 +10,6 @@ import { clearMessage } from "../slices/message";
 import logoImg from "../../assets/img/logo.png";
 
 const Login = () => {
-  let navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
 
@@ -40,8 +39,7 @@ const Login = () => {
     dispatch(login({ username, password }))
       .unwrap()
       .then(() => {
-        navigate("/profile");
-        window.location.reload();
+        <Navigate to="/profile" />;
       })
       .catch(() => {
         setLoading(false);

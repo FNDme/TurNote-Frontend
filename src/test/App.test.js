@@ -23,4 +23,18 @@ describe('App', () => {
     expect(getByText('Login')).toBeInTheDocument();
     expect(getByText('Sign Up')).toBeInTheDocument();
   });
+
+  it('dont display the login and signup links when he user is logged in', () => {
+    const { queryByText } = render(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+
+    expect(queryByText('Login')).toBeInTheDocument();
+    expect(queryByText('Sign Up')).toBeInTheDocument();
+    expect(queryByText('Logout')).not.toBeInTheDocument();
+  });
+
+  
 });

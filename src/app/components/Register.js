@@ -89,6 +89,7 @@ const Register = () => {
                   <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <Field
+                      data-testid="name"
                       name="name"
                       type="text"
                       className={
@@ -108,6 +109,7 @@ const Register = () => {
                   <div className="form-group">
                     <label htmlFor="username">Username</label>
                     <Field
+                      data-testid="username"
                       name="username"
                       type="text"
                       className={
@@ -127,6 +129,7 @@ const Register = () => {
                   <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <Field
+                      data-testid="email"
                       name="email"
                       type="email"
                       className={
@@ -144,6 +147,7 @@ const Register = () => {
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <Field
+                      data-testid="password"
                       name="password"
                       type="password"
                       className={
@@ -179,6 +183,7 @@ const Register = () => {
               successful ? "alert alert-success" : "alert alert-danger"
             }
             role="alert"
+            data-testid="message"
           >
             {message}
           </div>
