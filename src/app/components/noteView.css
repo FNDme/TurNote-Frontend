@@ -1,0 +1,17 @@
+h1.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  margin-top: 1em;
+  padding: 1rem;
+  border: 2px solid #0d0d0d;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #0d0d0d;
+  font-family: 'JetBrainsMono', monospace;
+  font-size: 0.8rem;
+  min-height: 20rem;
+}

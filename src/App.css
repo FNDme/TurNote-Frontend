@@ -1,0 +1,39 @@
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.login-form,
+.signup-form {
+  max-width: 350px;
+  margin: auto;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 1.3em auto 1.7em;
+  display: block;
+}
+
+.navbar-brand {
+  margin: 0 2em 0 1em;
+  font-weight: 800;
+}
+
+.spin {
+  margin-right: 1em;
+}
