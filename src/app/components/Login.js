@@ -39,7 +39,8 @@ const Login = () => {
     dispatch(login({ username, password }))
       .unwrap()
       .then(() => {
-        <Navigate to="/profile" />;
+        setLoading(false);
+        return <Navigate to="/profile" />;
       })
       .catch(() => {
         setLoading(false);

@@ -13,7 +13,7 @@ const Profile = () => {
     dispatch(removeAccount())
       .then(() => {
         setLoading(false);
-        <Navigate to="/login" />;
+        return <Navigate to="/login" />;
       })
       .catch(() => {
         setLoading(false);
