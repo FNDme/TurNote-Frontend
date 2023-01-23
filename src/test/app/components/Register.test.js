@@ -33,7 +33,7 @@ describe("Register", () => {
     expect(getByText("Sign Up")).toBeInTheDocument();
   });
 
-  it("rendering and submitting the formik form", async () => {
+  it("if one field is empty, displays an error message", async () => {
     const { getByTestId, getByText } = render(
       <Provider store={store}>
         <Register />
@@ -47,7 +47,7 @@ describe("Register", () => {
       target: { value: "Test Username" },
     });
     fireEvent.change(getByTestId("email"), {
-      target: { value: "test@test.test" },
+      target: { value: "" },
     });
     fireEvent.change(getByTestId("password"), {
       target: { value: "Test Password" },
@@ -55,9 +55,8 @@ describe("Register", () => {
 
     fireEvent.click(getByText("Sign Up"));
 
-    // it should display the error message
     await waitFor(() => {
-      expect(getByTestId("message")).toBeInTheDocument();
+      expect(getByText("This field is required!")).toBeInTheDocument();
     });
   });
 });

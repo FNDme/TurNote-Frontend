@@ -12,11 +12,6 @@ const Register = () => {
   const [successful, setSuccessful] = useState(false);
 
   const { message } = useSelector((state) => state.message);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(clearMessage());
-  }, [dispatch]);
 
   const initialValues = {
     name: "",

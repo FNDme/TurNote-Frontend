@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { removeAccount } from "../slices/auth";
-import { clearMessage } from "../slices/message";
-
-import { Navigate } from "react-router-dom";
 
 const Profile = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   const { message } = useSelector((state) => state.message);
-
-  useEffect(() => {
-    dispatch(clearMessage());
-  }, [dispatch]);
 
   const handleRemoveAccount = () => {
     setLoading(true);

@@ -12,6 +12,16 @@ const Note = () => {
   const [errorMessage, setErrorMessage] = React.useState(null);
 
   React.useEffect(() => {
+    if (!id) {
+      setErrorMessage("No se ha encontrado la nota");
+      setNote({
+        title: "No se ha encontrado la nota",
+        content: "",
+        tags: [],
+        author: "",
+      });
+      return;
+    }
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
       NotesService.getPublic(id).then((response) => {

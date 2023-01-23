@@ -257,6 +257,15 @@ const Editor = () => {
   })
 
   React.useEffect(() => {
+    if (!id) {
+      setErrorMessage('No note id provided')
+      setTitle('')
+      if (editor)
+        editor.chain().focus().setContent('').run()
+      setTags([])
+      setIsPublic(false)
+      return
+    }
     NotesService.get(id).then((response) => {
       setTitle(response.data.title)
       if (editor)
