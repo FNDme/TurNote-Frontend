@@ -1,7 +1,7 @@
 import axios from "axios";
 const config = require('../config/backend.config.js');
 
-const API_URL = `http://${config.BACKEND_HOST}:8080/api/test/`;
+const API_URL = `http://${config.BACKEND_HOST}:8080/api/board/`;
 
 const getPublicContent = () => {
   return axios.get(API_URL + "all");

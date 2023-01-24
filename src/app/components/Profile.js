@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 import { removeAccount } from "../slices/auth";
 
@@ -7,13 +8,14 @@ const Profile = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(false);
   const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
 
   const handleRemoveAccount = () => {
     setLoading(true);
     dispatch(removeAccount())
       .then(() => {
         setLoading(false);
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" replace={true} />;
       })
       .catch(() => {
         setLoading(false);
